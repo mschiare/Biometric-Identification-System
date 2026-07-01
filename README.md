@@ -33,7 +33,7 @@ Deploys a live interactive interface inside a three-tab `Gradio` Web Dashboard, 
 ---
 ## 🛠️ Project File 
 
-* **`Sistema_di_Riconoscimento_BBA.ipynb`**: Primary application notebook housing the cascade logic functions.
+* **`Sistema_di_Riconoscimento.ipynb`**: Primary application notebook housing the cascade logic functions.
 * **`Estrazione_feature_gallery.ipynb`**: Pipeline setup script that iterates across samples to build the finalized ledger.
 
 ---
