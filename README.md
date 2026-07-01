@@ -10,25 +10,25 @@ The framework is segmented into two sequential workflows across the operational 
 
 ### 1. Automated Feature Extraction 
 
-* **Detection & Gating:** It cycles through multi-context image directories, isolates faces via `RetinaFace` (automatically aligned and scaled to canonical $112 \times 112 \times 3$ tensors), and normalizes the input[cite: 6].
+* **Detection & Gating:** It cycles through multi-context image directories, isolates faces via `RetinaFace` (automatically aligned and scaled to canonical $112 \times 112 \times 3$ tensors), and normalizes the input.
 * **Feature Representation:** Leverages `DeepFace` with the **ArcFace** model backend to extract a 512-dimensional floating-point vector mapping unique facial traits.
 * **Serialization:** Serializes and exports the final feature maps into structured binary storage.
 
 ### 2. Core Real-Time Engine
 Deploys a live interactive interface inside a three-tab `Gradio` Web Dashboard, enforcing a strict structural pipeline before executing face-matching routines:
 * **Strict Quality Check:**
-  * *Resolution Check:* Discards frames falling below standard HD specifications ($W < 720$ or $H < 1280$).
-  * *Aspect Ratio Gating:* Validates a rigid Portrait 16:9 aspect ratio ($9/16 = 0.5625$) within a $\pm0.05$ tolerance window.
-  * *Orientation Filter:* Immediately flags and blocks horizontal captures ($W > H$).
-  * *Illumination Guard:* Computes average pixel intensity, discarding under-exposed ($< 20$) or over-exposed ($> 240$) frames.
-  * *Defocus Blur Guard:* Employs the Laplacian Variance algorithm on downsampled grids, setting an empirical threshold $T_{\text{blur}} = 20.0$.
+  * *Resolution Check:* Discards frames falling below standard HD specifications.
+  * *Aspect Ratio Gating:* Validates a rigid Portrait 16:9 aspect ratio.
+  * *Orientation Filter:* Immediately flags and blocks horizontal captures.
+  * *Illumination Guard:* Computes average pixel intensity, discarding under-exposed or over-exposed frames.
+  * *Defocus Blur Guard:* Employs the Laplacian Variance algorithm on downsampled grids.
   * *Crowd Gate:* Restricts matching protocols if the detector backend extracts 0 faces or more than 1 face.
 * **Liveness Check:**
   Clones and mounts the **Silent-Face-Anti-Spoofing** repository into the kernel environment. 
 * **Biometric Decision Management:**
-  * *Deduplication Gate:* Rejects new enrollments if the computed cosine distance against any pre-existing database matrix drops below a security threshold ($0.40$), preventing identity duplication.
-  * *1:1 Verification:* Evaluates target probes specifically against a target `claimed_id` vector profile using an operational decision barrier ($T_v = 0.458$).
-  * *1:N Open-Set Identification:* Runs a nearest-neighbor sweep across the persistent space, enforcing a matching threshold ($T_i = 0.458$). It executes an active **Reject Option** ("Sconosciuto") to block unauthorized intrusions.
+  * *Deduplication Gate:* Rejects new enrollments if the computed cosine distance against any pre-existing database matrix drops below a security threshold, preventing identity duplication.
+  * *1:1 Verification:* Evaluates target probes specifically against a target `claimed_id` vector profile using an operational decision barrier.
+  * *1:N Open-Set Identification:* Runs a nearest-neighbor sweep across the persistent space, enforcing a matching threshold. It executes an active **Reject Option** ("Sconosciuto") to block unauthorized intrusions.
 
 ---
 
