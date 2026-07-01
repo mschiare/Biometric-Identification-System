@@ -24,9 +24,9 @@ Deploys a live interactive interface inside a `Gradio` Web Dashboard, enforcing 
   * *Defocus Blur Guard:* Employs the Laplacian Variance algorithm on downsampled grids.
   * *Crowd Gate:* Restricts matching protocols if the detector backend extracts 0 faces or more than 1 face.
 * **Liveness Check:**
-  Clones and mounts the **Silent-Face-Anti-Spoofing** repository into the kernel environment. 
-* **Biometric Decision Management:**
-  * *Deduplication Gate:* Rejects new enrollments if the computed cosine distance against any pre-existing database matrix drops below a security threshold, preventing identity duplication.
+  Clones and mounts the **Silent-Face-Anti-Spoofing** repository into the kernel environment.
+* **Deduplication Gate:** Rejects new enrollments if the computed cosine distance against any pre-existing database matrix drops below a security threshold, preventing identity duplication.
+* **Operational Modes:**
   * *1:1 Verification:* Evaluates target probes specifically against a target `claimed_id` vector profile using an operational decision barrier.
   * *1:N Open-Set Identification:* Runs a nearest-neighbor sweep across the persistent space, enforcing a matching threshold. It executes an active **Reject Option** ("Sconosciuto") to block unauthorized intrusions.
 
