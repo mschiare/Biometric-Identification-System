@@ -2,8 +2,6 @@
 
 This repository contains an end-to-end facial recognition pipeline designed to run within the **Google Colab** ecosystem. The architecture integrates deep learning models (`ArcFace`, `RetinaFace`, and `MiniFASNet`) to deploy a secure, real-time framework capable of executing user enrollment, open-set identification, 1:1 verification, and presentation attack detection (anti-spoofing).
 
-<img width="666" height="258" alt="Screenshot 2026-07-01 alle 15 02 48" src="https://github.com/user-attachments/assets/20cb296f-5ee4-43ec-8663-5832a57a04dd" />
-
 ---
 
 ## 📐 System Architecture & Module Details
