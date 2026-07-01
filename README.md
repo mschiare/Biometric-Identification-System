@@ -15,7 +15,7 @@ The framework is segmented into two sequential workflows across the operational 
 * **Serialization:** Serializes and exports the final feature maps into structured binary storage.
 
 ### 2. Core Real-Time Engine
-Deploys a live interactive interface inside a three-tab `Gradio` Web Dashboard, enforcing a strict structural pipeline before executing face-matching routines:
+Deploys a live interactive interface inside a `Gradio` Web Dashboard, enforcing a strict structural pipeline before executing face-matching routines:
 * **Strict Quality Check:**
   * *Resolution Check:* Discards frames falling below standard HD specifications.
   * *Aspect Ratio Gating:* Validates a rigid Portrait 16:9 aspect ratio.
