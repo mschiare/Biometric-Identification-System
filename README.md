@@ -31,5 +31,9 @@ Deploys a live interactive interface inside a three-tab `Gradio` Web Dashboard, 
   * *1:N Open-Set Identification:* Runs a nearest-neighbor sweep across the persistent space, enforcing a matching threshold. It executes an active **Reject Option** ("Sconosciuto") to block unauthorized intrusions.
 
 ---
+## 🛠️ Project File 
+
+* **`Sistema_di_Riconoscimento_BBA.ipynb`**: Primary application notebook housing the cascade logic functions.
+* **`Estrazione_feature_gallery.ipynb`**: Pipeline setup script that iterates across samples to build the finalized ledger.
 
 
