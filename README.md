@@ -16,7 +16,7 @@ The framework is segmented into two sequential workflows across the operational 
 * **Feature Representation:** Leverages `DeepFace` with the **ArcFace** model backend to extract a 512-dimensional vector mapping unique facial traits.
 * **Serialization:** Serializes and exports the final feature maps into structured binary storage.
 
-### 2. System Execution Workflow
+### 2. System Execution 
 Deploys a live interactive interface inside a `Gradio` Web Dashboard, enforcing a strict structural pipeline before executing face-matching routines:
 * **Strict Quality Check:**
   * *Resolution Check:* Discards frames falling below standard HD specifications.
