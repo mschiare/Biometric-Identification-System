@@ -10,8 +10,8 @@ The framework is segmented into two sequential workflows across the operational 
 
 ### 1. Automated Feature Extraction 
 
-* **Detection & Gating:** It cycles through multi-context image directories, isolates faces via `RetinaFace`, and normalizes the input.
-* **Feature Representation:** Leverages `DeepFace` with the **ArcFace** model backend to extract a 512-dimensional floating-point vector mapping unique facial traits.
+* **Detection & Gating:** It cycles through image directories, isolates faces via `RetinaFace`, and normalizes the input.
+* **Feature Representation:** Leverages `DeepFace` with the **ArcFace** model backend to extract a 512-dimensional vector mapping unique facial traits.
 * **Serialization:** Serializes and exports the final feature maps into structured binary storage.
 
 ### 2. Core Real-Time Engine
