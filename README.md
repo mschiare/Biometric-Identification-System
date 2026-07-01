@@ -38,4 +38,4 @@ Deploys a live interactive interface inside a three-tab `Gradio` Web Dashboard, 
 
 ---
 
-
+<img width="666" height="258" alt="Screenshot 2026-07-01 alle 15 02 48" src="https://github.com/user-attachments/assets/20cb296f-5ee4-43ec-8663-5832a57a04dd" />
